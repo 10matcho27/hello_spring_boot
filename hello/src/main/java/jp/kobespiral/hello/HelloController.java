@@ -21,6 +21,9 @@ public class HelloController {
      * @param model 画面のモデル
      * @return あいさつページ
      */
+
+    //GETが来たらこいつを呼び出せ！！！！
+    //@PathVariavle : pathにきたvariableを渡す
     @GetMapping("/{name}/hello")
     public String sayHello(@PathVariable String name, Model model) {
         model.addAttribute("greeting", createGreetingMessage()); // あいさつ文セット
@@ -36,6 +39,8 @@ public class HelloController {
      * @param model 画面のモデル
      * @return あいさつ追加ページ
      */
+
+     //POSTが来たらこいつを呼び出せ！！！！
     @PostMapping("/{name}/hello/add")
     public String addHello(@PathVariable String name, @RequestParam("aisatsu") String aisatsu, Model model) {
         list.add(aisatsu);
